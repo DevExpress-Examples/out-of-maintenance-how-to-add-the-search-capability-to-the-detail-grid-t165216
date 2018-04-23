@@ -1,0 +1,39 @@
+﻿<Window x:Class="DetailGridSearchExample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+        xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+        xmlns:local="clr-namespace:DetailGridSearchExample"
+        Title="MainWindow"
+        Width="525"
+        Height="350">
+
+    <Window.Resources>
+        <Style TargetType="dxg:TableView">
+            <Setter Property="AutoWidth" Value="False" />
+            <Setter Property="NavigationStyle" Value="Row" />
+            <Setter Property="ShowGroupPanel" Value="False" />
+        </Style>
+    </Window.Resources>
+
+    <Window.DataContext>
+        <local:TaskViewModel />
+    </Window.DataContext>
+
+    <dxg:GridControl x:Name="masterGrid"
+                     AutoGenerateColumns="AddNew"
+                     ItemsSource="{Binding Path=List}">
+        <dxmvvm:Interaction.Behaviors>
+            <local:DetailGridSearchingBehavior/>
+        </dxmvvm:Interaction.Behaviors>
+        <dxg:GridControl.View>
+            <dxg:TableView x:Name="view" ShowSearchPanelMode="Always" />
+        </dxg:GridControl.View>
+        <dxg:GridControl.DetailDescriptor>
+            <dxg:DataControlDetailDescriptor ItemsSourcePath="List">
+                <dxg:GridControl AutoGenerateColumns="AddNew" />
+            </dxg:DataControlDetailDescriptor>
+        </dxg:GridControl.DetailDescriptor>
+    </dxg:GridControl>
+
+</Window>

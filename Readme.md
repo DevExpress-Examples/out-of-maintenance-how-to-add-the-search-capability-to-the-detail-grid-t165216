@@ -2,7 +2,7 @@
 *Files to look at*:
 
 * [MainWindow.xaml](./CS/DetailGridSearchExample/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/DetailGridSearchExample/MainWindow.xaml))
-* [MainWindow.xaml.cs](./CS/DetailGridSearchExample/MainWindow.xaml.cs) (VB: [MainWindow.xaml](./VB/DetailGridSearchExample/MainWindow.xaml))
+* [MainWindow.xaml.cs](./CS/DetailGridSearchExample/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/DetailGridSearchExample/MainWindow.xaml.vb))
 * [TaskViewModel.cs](./CS/DetailGridSearchExample/TaskViewModel.cs)
 <!-- default file list end -->
 # How to add the search capability to the detail grid
